@@ -4,12 +4,17 @@ import Dashboard from './component/Dashboard';
 
 function App() {
     return (
-        <Router >
-            <Routes>
+      <div >
+        <div className='grid w-[100%] h-screen place-items-center bg-cyan-400'>
+        <Router>
+            <Routes >
                 <Route path="/" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </Router>
+        </div>
+        
+        </div>
     );
 }
 
