@@ -24,12 +24,12 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log("User Data:", data);
-    navigate("/dashboard", { state: { userName: data.name || "User" } });
+    navigate("/Blog", { state: { userName: data.name || "User" } });
   };
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
-      <Paper elevation={6} sx={{ padding: 4, width: 400, borderRadius: 3 }}>
+      <Paper elevation={7} sx={{ padding: 4, width: 400, borderRadius: 3 }}>
         {/* Header Title Section */}
         <Typography variant="h4" align="center" gutterBottom>
           {isLoginMode ? "Login" : "Sign Up"}
