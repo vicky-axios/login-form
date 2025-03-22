@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardMedia, CardContent, Typography, Grid, Container, Grid2 } from '@mui/material';
+import { Card, CardMedia, CardContent, Typography, Grid, Container } from '@mui/material';
 
 const FakeApi = () => {
     const [fake, setFake] = useState([]);
@@ -18,148 +18,89 @@ const FakeApi = () => {
         <Container 
             maxWidth="lg" 
             sx={{ 
-                backgroundColor: "#000", 
+                backgroundColor: "#f4f3f3", 
                 padding: 4, 
-                minHeight: "100vh" 
+                minHeight: "100vh",
+                width: "100%"
             }}
         >
             <Typography 
-                variant="h2" 
+                variant="h4" 
                 align="center" 
                 gutterBottom 
                 sx={{
-                    color: "aqua",
-                    fontSize: "5rem",
+                    color: "#333",
+                    fontSize: "2rem",
                     marginBottom: "2em",
-                    fontFamily: "'Stylish', sans-serif"
+                    fontWeight: "bold"
                 }}
             >
-                Fake API Store
+                All Products
             </Typography>
-            <Grid2 
-                container 
-                spacing={3} 
-                justifyContent="center"
-            >
+
+            <Grid container spacing={3} justifyContent="center">
                 {fake.map((values) => (
-                    <Grid2 item xs={12} sm={6} md={4} key={values.id}>
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={values.id}>
                         <Card 
                             sx={{ 
-                                width: "100%", 
-                                backgroundColor: "rgba(255, 255, 255, 0.1)", 
+                                backgroundColor: "#fff", 
                                 padding: 2, 
-                                boxShadow: "2px 2px 10px white", 
-                                color: "#fff",
+                                boxShadow: "2px 2px 10px rgba(0,0,0,0.1)", 
                                 display: "flex", 
-                                flexDirection: "column", 
+                                flexDirection: "column",
                                 alignItems: "center",
-                                textAlign: "center"
+                                textAlign: "center",
+                                borderRadius: "10px"
                             }}
                         >
                             <CardMedia
                                 component="img"
-                                height="300"
                                 image={values.image}
                                 alt={values.title}
                                 sx={{ 
                                     objectFit: "contain", 
-                                    width: "300px", 
-                                    height: "300px" 
+                                    width: "100%", 
+                                    height: "200px",
+                                    padding: "10px"
                                 }}
                             />
                             <CardContent>
                                 <Typography 
                                     variant="h6" 
-                                    component="div" 
                                     sx={{
-                                        color: "#fff",
-                                        fontFamily: "'Stylish', sans-serif"
+                                        fontSize: "1rem",
+                                        fontWeight: "bold",
+                                        color: "#222",
+                                        height: "50px",
+                                        overflow: "hidden"
                                     }}
                                 >
                                     {values.title}
                                 </Typography>
                                 <Typography 
                                     variant="body2" 
-                                    color="palegreen"
+                                    color="textSecondary"
+                                    sx={{ height: "40px", overflow: "hidden" }}
                                 >
-                                    {values.description}
+                                    {values.category}
+                                </Typography>
+                                <Typography 
+                                    variant="h6" 
+                                    sx={{ 
+                                        color: "#d32f2f", 
+                                        fontWeight: "bold", 
+                                        marginTop: "10px"
+                                    }}
+                                >
+                                    ${values.price}
                                 </Typography>
                             </CardContent>
                         </Card>
-                    </Grid2>
+                    </Grid>
                 ))}
-            </Grid2>
+            </Grid>
         </Container>
     );
 };
 
 export default FakeApi;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react'
-// import '../component/Fake.css'
-// const FakeApi = () => {
-
-//     {/* https://fakestoreapi.com/carts */ }
-    
-//     const [fake, setFake] = useState([]);
-//     console.log(fake);
-//     useEffect(() => {
-//         fakestore();
-//     }, [])
-
-//     const fakestore = async () => {
-//         const response = await fetch("https://fakestoreapi.com/products");
-//         // console.log(response);
-//         const jsonData = await response.json();
-//         // console.log(jsonData);
-//         setFake(jsonData);
-
-//     }
-
-
-
-//     return (
-//         <>
-
-//             <div>Fak Api Store </div>
-//             <div className='container'>
-//                 {fake.map((values) => {
-
-//                     return (
-//                     <>
-//                             <div className='box'>
-//                                 <div className='content'>
-//                                     <h5>{values.title}</h5>
-//                                     <p>{values.discription}</p>
-//                                 </div>
-//                                <img src={values.image} alt="" />
-//                             </div>
-//                         </>
-//                     )
-
-
-//                 })}
-
-//             </div>
-//         </>
-//     )
-// }
-
-// export default FakeApi

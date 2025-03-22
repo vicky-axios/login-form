@@ -40,7 +40,9 @@ const Login = () => {
           fullWidth
           value={isLoginMode ? "login" : "signup"}
           exclusive
-          onChange={() => setIsLoginMode(!isLoginMode)}
+          onChange={(_, newValue) => {
+            if (newValue) setIsLoginMode(newValue === "login");
+          }}
           sx={{ marginBottom: 3 }}
         >
           <ToggleButton value="login">Login</ToggleButton>
@@ -119,7 +121,7 @@ const Login = () => {
 
           {/* Toggle Between Login and Signup */}
           <Typography align="center" sx={{ mt: 2 }}>
-            {isLoginMode ? "Don't have an account?" : "Already have an account?"} {" "}
+            {isLoginMode ? "Don't have an account?" : "Already have an account?"}{" "}
             <span
               onClick={() => setIsLoginMode(!isLoginMode)}
               style={{ cursor: "pointer", color: "#1976d2", fontWeight: "bold" }}
@@ -134,9 +136,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-
-
-

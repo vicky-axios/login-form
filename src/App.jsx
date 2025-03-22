@@ -12,9 +12,9 @@ function App() {
 
         <Routes >
           <Route path="/" element={<Login />} />
-          <Route path="Blog" element={<Blog/>} />
-          <Route path="Pricing" element={<Pricing/>} />
-          <Route path="Products" element={<Products/>} />
+          <Route path="/Blog" element={<Blog/>} />
+          <Route path="/Pricing" element={<Pricing/>} />
+          <Route path="/Products" element={<Products/>} />
         </Routes>
       </div>
 
@@ -34,15 +34,4 @@ export default App;
 
 
 
-/* import React from 'react'
-import Login from './component/Login'
 
-const App = () => {
-  return (
-    <div className='grid w-[100%] h-screen place-items-center bg-cyan-400'>
-      <Login/>
-    </div>
-  )
-}
-
-export default App */
